@@ -1,3 +1,11 @@
+GIT
+  remote: git@damos.fruitopology.net:agora/greek-i18n.git
+  revision: 82d3d8ed057776f59528c5de2276a832578a69b7
+  branch: master
+  specs:
+    greek-i18n (0.1.0)
+      i18n
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -30,6 +38,7 @@ PLATFORMS
 DEPENDENCIES
   activesupport
   awesome_print
+  greek-i18n!
   nokogiri
   ox
   pry
