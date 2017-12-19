@@ -1,17 +1,24 @@
-GIT
-  remote: git@damos.fruitopology.net:agora/greek-i18n.git
-  revision: 82d3d8ed057776f59528c5de2276a832578a69b7
-  branch: master
+PATH
+  remote: .
   specs:
-    greek-i18n (0.1.0)
-      i18n
+    greekLit (0.1.0)
+      activesupport
+      awesome_print
+      bundler
+      elasticsearch
+      greek-i18n
+      nokogiri
+      ox
+      pry
+      rake
+      rspec
 
 GEM
-  remote: https://rubygems.org/
+  remote: https://gems.fruitopology.net/
   specs:
     activesupport (5.2.3)
       concurrent-ruby (~> 1.0, >= 1.0.2)
-      i18n (>= 0.7, < 2)
+      i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     awesome_print (1.8.0)
@@ -28,20 +35,29 @@ GEM
     pry (0.12.2)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
+    rake (12.3.0)
+    rspec (3.7.0)
+      rspec-core (~> 3.7.0)
+      rspec-expectations (~> 3.7.0)
+      rspec-mocks (~> 3.7.0)
+    rspec-core (3.7.0)
+      rspec-support (~> 3.7.0)
+    rspec-expectations (3.7.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.7.0)
+    rspec-mocks (3.7.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.7.0)
+    rspec-support (3.7.0)
     thread_safe (0.3.6)
-    tzinfo (1.2.5)
+    tzinfo (1.2.4)
       thread_safe (~> 0.1)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  activesupport
-  awesome_print
-  greek-i18n!
-  nokogiri
-  ox
-  pry
+  greekLit!
 
 BUNDLED WITH
-   1.16.1
+   1.16.0
