@@ -28,8 +28,8 @@ module GreekLit
         @title_grc
       end
 
-      def _index
-        "corpus-ancient-greek-#{author}-#{title}"
+      def _index(type)
+        "corpus-ancient-greek-#{author}-#{title}-#{type}"
       end
 
       def now
@@ -88,7 +88,7 @@ module GreekLit
         puts doc
         _id = "#{book_num}.#{linum}"
         # send to es
-        #action.call _index, _type, _id, doc
+        action.call _index(_type), _type, _id, doc
         line.split(" ").each_with_index do |word, ii|
           word = word.gsub(/[[:punct:]]/, '')
           _id = "#{book_num}.#{linum}-#{ii}"
@@ -96,7 +96,7 @@ module GreekLit
           doc = word_mapping book_num, linum, ii, word
           puts doc
           # send to es
-          #action.call _index, _type, _id, doc
+          action.call _index(_type), _type, _id, doc
         end
       end
 
@@ -110,7 +110,7 @@ module GreekLit
         doc = book_mapping book_num, book_name
         puts doc
         # send to es
-        #action.call _index, _type, _id, doc
+        action.call _index(_type), _type, _id, doc
         book_lines.each_with_index do |line, i|
           linum = i + 1
           split_line book_num, line[:content], line[:number], action
