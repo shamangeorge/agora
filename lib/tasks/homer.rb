@@ -2,16 +2,18 @@ namespace :homer do
   desc "print out a whole book of the iliad"
   task :print_iliad_book, [:book_num] do |t, args|
     book_num = args[:book_num].to_i
+    print_it = true
     puts "Printing book #: #{book_num}"
-    book = GreekLit::Omiros::Iliada.new.process_book book_num
+    book = GreekLit::Omiros::Iliada.new.process_book book_num, print_it
     puts book
   end
 
   desc "print out a whole book of the odyssey"
   task :print_odyssey_book, [:book_num] do |t, args|
     book_num = args[:book_num].to_i
+    print_it = true
     puts "Printing book #: #{book_num}"
-    GreekLit::Omiros::Odisseia.new.process_book book_num
+    GreekLit::Omiros::Odisseia.new.process_book book_num, print_it
   end
 
   desc "index homer on elasticsearch"

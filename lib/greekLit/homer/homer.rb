@@ -72,7 +72,7 @@ module GreekLit
       def get_book i
         books[i]
       end
-      def process_book book_num
+      def process_book book_num, print_it = false
         exit unless book_in_range? book_num
         book_index = book_num - 1
         book = get_book(book_index)
@@ -81,10 +81,9 @@ module GreekLit
         mlines.each_with_index do |line, i|
           if line[:number].to_i != i + 1
             line[:index_problematic] = true
-            #puts "^^^^ inspect me".red
-            #exit
+            puts "^^^^ inspect me".red if print_it
           end
-          #puts "#{i + 1}:#{line.inspect}"
+          puts "#{i + 1}:#{line.inspect}" if print_it
         end
       end
       def process_all
